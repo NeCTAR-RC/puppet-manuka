@@ -1,0 +1,123 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "be34a7e1_14aee89d",
+        "filename": "manifests/init.pp",
+        "patchSetId": 3
+      },
+      "lineNbr": 8,
+      "author": {
+        "id": 1000177
+      },
+      "writtenOn": "2020-04-20T00:28:18Z",
+      "side": 1,
+      "message": "not aodh ?",
+      "revId": "332721f3420eae916a443addf5d9cb5858963c1d",
+      "serverId": "f182a8af-62ca-4ceb-ab81-14f8fec9c6c5",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "b0d6ec0b_ecc95051",
+        "filename": "manifests/init.pp",
+        "patchSetId": 3
+      },
+      "lineNbr": 325,
+      "author": {
+        "id": 1000177
+      },
+      "writtenOn": "2020-04-20T00:28:18Z",
+      "side": 1,
+      "message": "extra space",
+      "revId": "332721f3420eae916a443addf5d9cb5858963c1d",
+      "serverId": "f182a8af-62ca-4ceb-ab81-14f8fec9c6c5",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "79dbbab0_64ad80e2",
+        "filename": "manifests/keystone/auth.pp",
+        "patchSetId": 3
+      },
+      "lineNbr": 73,
+      "author": {
+        "id": 1000177
+      },
+      "writtenOn": "2020-04-20T00:28:18Z",
+      "side": 1,
+      "message": "?",
+      "revId": "332721f3420eae916a443addf5d9cb5858963c1d",
+      "serverId": "f182a8af-62ca-4ceb-ab81-14f8fec9c6c5",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "81a89945_96da2c86",
+        "filename": "manifests/keystone/auth.pp",
+        "patchSetId": 3
+      },
+      "lineNbr": 75,
+      "author": {
+        "id": 1000177
+      },
+      "writtenOn": "2020-04-20T00:28:18Z",
+      "side": 1,
+      "message": "?",
+      "revId": "332721f3420eae916a443addf5d9cb5858963c1d",
+      "serverId": "f182a8af-62ca-4ceb-ab81-14f8fec9c6c5",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "8e31cc39_ccdd3ef2",
+        "filename": "manifests/keystone/authtoken.pp",
+        "patchSetId": 3
+      },
+      "lineNbr": 169,
+      "author": {
+        "id": 1000177
+      },
+      "writtenOn": "2020-04-20T00:28:18Z",
+      "side": 1,
+      "message": "deprecated ?",
+      "revId": "332721f3420eae916a443addf5d9cb5858963c1d",
+      "serverId": "f182a8af-62ca-4ceb-ab81-14f8fec9c6c5",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "718d40ca_f62e2f7e",
+        "filename": "manifests/worker.pp",
+        "patchSetId": 3
+      },
+      "lineNbr": 58,
+      "author": {
+        "id": 1000177
+      },
+      "writtenOn": "2020-04-20T00:28:18Z",
+      "side": 1,
+      "message": "spacing",
+      "revId": "332721f3420eae916a443addf5d9cb5858963c1d",
+      "serverId": "f182a8af-62ca-4ceb-ab81-14f8fec9c6c5",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "ff1464ea_eb087008",
+        "filename": "manifests/wsgi/apache.pp",
+        "patchSetId": 3
+      },
+      "lineNbr": 4,
+      "author": {
+        "id": 1000177
+      },
+      "writtenOn": "2020-04-20T00:28:18Z",
+      "side": 1,
+      "message": "?",
+      "revId": "332721f3420eae916a443addf5d9cb5858963c1d",
+      "serverId": "f182a8af-62ca-4ceb-ab81-14f8fec9c6c5",
+      "unresolved": true
+    }
+  ]
+}
