@@ -1,0 +1,38 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "dff6cc22_3b4461cb",
+        "filename": "manifests/api.pp",
+        "patchSetId": 5
+      },
+      "lineNbr": 28,
+      "author": {
+        "id": 1000177
+      },
+      "writtenOn": "2020-04-22T00:02:25Z",
+      "side": 1,
+      "message": "is this 5000 ?",
+      "revId": "4c41a0cf3f486cf7c5c783578081256111ce02cf",
+      "serverId": "f182a8af-62ca-4ceb-ab81-14f8fec9c6c5",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "2ce1fe72_be3ca536",
+        "filename": "manifests/api.pp",
+        "patchSetId": 5
+      },
+      "lineNbr": 88,
+      "author": {
+        "id": 1000177
+      },
+      "writtenOn": "2020-04-22T00:02:25Z",
+      "side": 1,
+      "message": "port ?",
+      "revId": "4c41a0cf3f486cf7c5c783578081256111ce02cf",
+      "serverId": "f182a8af-62ca-4ceb-ab81-14f8fec9c6c5",
+      "unresolved": true
+    }
+  ]
+}
