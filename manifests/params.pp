@@ -15,7 +15,7 @@ class manuka::params {
       $api_package_name            = 'manuka-api'
       $worker_package_name         = 'manuka-worker'
       $manuka_wsgi_script_path    = '/usr/lib/cgi-bin/manuka'
-      $manuka_wsgi_script_source  = '/usr/bin/manuka-api'
+      $manuka_wsgi_script_source  = '/usr/share/manuka/manuka.wsgi'
     }
     default: {
       fail("Unsupported osfamily: ${::osfamily} operatingsystem")
