@@ -14,7 +14,7 @@ class manuka::params {
       $common_package_name         = 'manuka-common'
       $api_package_name            = 'manuka-api'
       $worker_package_name         = 'manuka-worker'
-      $manuka_wsgi_script_path    = '/usr/lib/cgi-bin/manuka'
+      $manuka_wsgi_script_path    = '/usr/share/manuka/manuka.wsgi'
       $manuka_wsgi_script_source  = '/usr/bin/manuka-api'
     }
     default: {
