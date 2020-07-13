@@ -216,6 +216,15 @@
 #
 # [*orcid_sandbox*]
 #   If 'True', use the Orcid sandbox service rather than the production service
+#
+# [*orcid_http_proxy*]
+#   Use this proxy URL when talking http to the ORCID service
+#
+# [*orcid_https_proxy*]
+#   Use this proxy URL when talking https to the ORCID service
+#
+# [*orcid_timeout*]
+#   Use this timout (seconds) when talking to the ORCID service
 
 class manuka (
   $support_url,
@@ -225,6 +234,9 @@ class manuka (
   $orcid_key,
   $orcid_secret,
   $orcid_sandbox                      = $::os_service_default,
+  $orcid_http_proxy                   = $::os_service_default,
+  $orcid_https_proxy                  = $::os_service_default,
+  $orcid_timeout                      = $::os_service_default,
   $package_ensure                     = 'present',
   $default_transport_url              = $::os_service_default,
   $rpc_response_timeout               = $::os_service_default,
@@ -341,5 +353,8 @@ class manuka (
     'orcid/key':                         value => $orcid_key;
     'orcid/secret':                      value => $orcid_secret;
     'orcid/sandbox':                     value => $orcid_sandbox;
+    'orcid/http_proxy':                  value => $orcid_http_proxy;
+    'orcid/https_proxy':                 value => $orcid_https_proxy;
+    'orcid/timeout':                     value => $orcid_timeout;
   }
 }
