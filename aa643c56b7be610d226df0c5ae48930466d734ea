@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "aa70f57a_571809d9",
+        "filename": "manifests/init.pp",
+        "patchSetId": 2
+      },
+      "lineNbr": 227,
+      "author": {
+        "id": 1000000
+      },
+      "writtenOn": "2020-07-13T02:09:25Z",
+      "side": 1,
+      "message": "should be os service default\n\n$orcid_sandbox  \u003d $::os_service_default,",
+      "range": {
+        "startLine": 227,
+        "startChar": 40,
+        "endLine": 227,
+        "endChar": 48
+      },
+      "revId": "aa643c56b7be610d226df0c5ae48930466d734ea",
+      "serverId": "f182a8af-62ca-4ceb-ab81-14f8fec9c6c5",
+      "unresolved": true
+    }
+  ]
+}
