@@ -208,6 +208,15 @@
 #   before error is raised. Set to -1 to specify an infinite retry count.
 #   Defaults to undef.
 #
+# [*orcid_key*]
+#   API key for Orcid service
+#
+# [*orcid_secret*]
+#   Secret corresponding to the orcid API key
+#
+# [*orcid_sandbox*]
+#   If 'True', use the Orcid sandbox service rather than the production service
+
 class manuka (
   $support_url,
   $secret_key,
@@ -259,6 +268,9 @@ class manuka (
   $database_pool_timeout              = undef,
   $database_db_max_retries            = undef,
   $terms_version                      = $::os_service_default,
+  $orcid_key,
+  $orcid_secret,
+  $orcid_sandbox                      = 'False',
 ) inherits manuka::params {
 
   include ::manuka::deps
@@ -326,5 +338,8 @@ class manuka (
     'flask/secret_key':                  value => $secret_key;
     'keystone/authenticate_password':    value => $authenticate_password;
     'keystone/auth_url':                 value => $auth_url;
+    'orcid/key':                         value => $orcid_key;
+    'orcid/secret':                      value => $orcid_secret;
+    'orcid/sandbox':                     value => $orcid_sandbox;
   }
 }
