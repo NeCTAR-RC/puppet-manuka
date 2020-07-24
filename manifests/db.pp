@@ -8,8 +8,10 @@
 #   (Optional) Url used to connect to database.
 #   Defaults to 'sqlite:////var/lib/manuka/manuka.sqlite'.
 #
-# [*database_idle_timeout*]
-#   (Optional) Timeout when db connections should be reaped.
+# [*database_connection_pool_recycle*]
+#   (Optional) Connections which have been present in the connection pool longer
+#   than this number of seconds will be replaced with a new one the next time
+#   they are checked out from the pool.
 #   Defaults to $::os_service_default
 #
 # [*database_max_retries*]
@@ -43,42 +45,32 @@
 #   Defaults to $::os_service_default
 #
 class manuka::db (
-  $database_connection     = 'sqlite:////var/lib/manuka/manuka.sqlite',
-  $database_idle_timeout   = $::os_service_default,
-  $database_min_pool_size  = $::os_service_default,
-  $database_max_pool_size  = $::os_service_default,
-  $database_max_retries    = $::os_service_default,
-  $database_retry_interval = $::os_service_default,
-  $database_max_overflow   = $::os_service_default,
-  $database_pool_timeout   = $::os_service_default,
-  $database_db_max_retries = $::os_service_default,
+  $database_connection              = 'sqlite:////var/lib/manuka/manuka.sqlite',
+  $database_connection_pool_recycle = $::os_service_default,
+  $database_min_pool_size           = $::os_service_default,
+  $database_max_pool_size           = $::os_service_default,
+  $database_max_retries             = $::os_service_default,
+  $database_retry_interval          = $::os_service_default,
+  $database_max_overflow            = $::os_service_default,
+  $database_pool_timeout            = $::os_service_default,
+  $database_db_max_retries          = $::os_service_default,
 ) {
 
   include ::manuka::deps
-
-  $database_connection_real = pick($::manuka::database_connection, $database_connection)
-  $database_idle_timeout_real = pick($::manuka::database_idle_timeout, $database_idle_timeout)
-  $database_min_pool_size_real = pick($::manuka::database_min_pool_size, $database_min_pool_size)
-  $database_max_pool_size_real = pick($::manuka::database_max_pool_size, $database_max_pool_size)
-  $database_max_retries_real = pick($::manuka::database_max_retries, $database_max_retries)
-  $database_retry_interval_real = pick($::manuka::database_retry_interval, $database_retry_interval)
-  $database_max_overflow_real = pick($::manuka::database_max_overflow, $database_max_overflow)
-  $database_pool_timeout_real = pick($::manuka::database_pool_timeout, $database_pool_timeout)
-  $database_db_max_retries_real = pick($::manuka::database_db_max_retries, $database_db_max_retries)
 
   validate_legacy(Oslo::Dbconn, 'validate_re', $database_connection_real,
     ['^(sqlite|mysql(\+pymysql)?|postgresql):\/\/(\S+:\S+@\S+\/\S+)?'])
 
   oslo::db { 'manuka_config':
-    connection     => $database_connection_real,
-    idle_timeout   => $database_idle_timeout_real,
-    min_pool_size  => $database_min_pool_size_real,
-    max_pool_size  => $database_max_pool_size_real,
-    max_retries    => $database_max_retries_real,
-    retry_interval => $database_retry_interval_real,
-    max_overflow   => $database_max_overflow_real,
-    pool_timeout   => $database_pool_timeout_real,
-    db_max_retries => $database_db_max_retries_real,
+    connection              => $database_connection,
+    connection_pool_recycle => $database_connection_pool_recycle,
+    min_pool_size           => $database_min_pool_size,
+    max_pool_size           => $database_max_pool_size,
+    max_retries             => $database_max_retries,
+    retry_interval          => $database_retry_interval,
+    max_overflow            => $database_max_overflow,
+    pool_timeout            => $database_pool_timeout,
+    db_max_retries          => $database_db_max_retries,
   }
 
 }
