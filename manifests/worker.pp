@@ -25,6 +25,7 @@ class manuka::worker (
   $package_ensure         = 'present',
   $workers                = $::os_workers,
   $host                   = $::os_service_default,
+  $swift_region_name      = $::os_service_default,
   $swift_default_quota_gb = $::os_service_default,
   $smtp_host              = $::os_service_default,
 ) inherits manuka::params {
@@ -57,6 +58,7 @@ class manuka::worker (
   manuka_config {
     'DEFAULT/host':                 value => $host;
     'worker/workers':               value => $workers;
+    'swift/region_name':            value => $swift_region_name;
     'swift/default_quota_gb':       value => $swift_default_quota_gb;
     'smtp/host':                    value => $smtp_host;
     'smtp/from_email':              value => $from_email;
