@@ -41,6 +41,10 @@
 #   (Optional) Number of WSGI workers to spawn.
 #   Defaults to $::os_workers
 #
+# [*aliases*]
+#   (Optional) Aliases for the vhost
+#   Defaults to undef
+#
 # [*priority*]
 #   (Optional) The priority for the vhost.
 #   Defaults to '10'
@@ -111,6 +115,7 @@ class manuka::wsgi::apache (
   $path                        = '/',
   $ssl                         = false,
   $workers                     = $::os_workers,
+  $aliases                     = undef,
   $ssl_cert                    = undef,
   $ssl_key                     = undef,
   $ssl_chain                   = undef,
@@ -156,6 +161,7 @@ class manuka::wsgi::apache (
     threads                     => $threads,
     user                        => 'manuka',
     workers                     => $workers,
+    aliases                     => $aliases,
     wsgi_daemon_process         => 'manuka',
     wsgi_process_display_name   => $wsgi_process_display_name,
     wsgi_process_group          => 'manuka',
