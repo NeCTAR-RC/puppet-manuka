@@ -28,15 +28,16 @@ class manuka::policy (
   $policy_path = '/etc/manuka/policy.yaml',
 ) {
 
-  include ::manuka::deps
-  include ::manuka::params
+  include manuka::deps
+  include manuka::params
 
   validate_legacy(Hash, 'validate_hash', $policies)
 
   Openstacklib::Policy::Base {
     file_path  => $policy_path,
     file_user  => 'root',
-    file_group => $::manuka::params::group,
+    file_group => $manuka::params::group,
+    file_format => 'yaml',
   }
 
   create_resources('openstacklib::policy::base', $policies)
