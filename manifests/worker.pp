@@ -6,6 +6,12 @@
 #   (optional) Should the service be enabled.
 #   Defaults to true
 #
+# [*freshdesk_domain*]
+#   Freshdesk domain for creating contacts.
+#
+# [*freshdesk_key*]
+#   Freshdesk API key
+#
 # [*manage_service*]
 #   (optional) Whether the service should be managed by Puppet.
 #   Defaults to true.
@@ -20,6 +26,8 @@
 #
 class manuka::worker (
   $from_email,
+  $freshdesk_domain,
+  $freshdesk_key,
   $manage_service         = true,
   $enabled                = true,
   $package_ensure         = 'present',
@@ -55,10 +63,12 @@ class manuka::worker (
   }
 
   manuka_config {
-    'DEFAULT/host':                 value => $host;
-    'worker/workers':               value => $workers;
-    'swift/default_quota_gb':       value => $swift_default_quota_gb;
-    'smtp/host':                    value => $smtp_host;
-    'smtp/from_email':              value => $from_email;
+    'DEFAULT/host':           value => $host;
+    'worker/workers':         value => $workers;
+    'swift/default_quota_gb': value => $swift_default_quota_gb;
+    'smtp/host':              value => $smtp_host;
+    'smtp/from_email':        value => $from_email;
+    'freshdesk/domain':       value => $freshdesk_domain;
+    'freshdesk/key':          value => $freshdesk_key;
   }
 }
