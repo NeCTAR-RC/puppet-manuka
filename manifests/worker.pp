@@ -31,10 +31,10 @@ class manuka::worker (
   $manage_service         = true,
   $enabled                = true,
   $package_ensure         = 'present',
-  $workers                = $::os_workers,
-  $host                   = $::os_service_default,
-  $swift_default_quota_gb = $::os_service_default,
-  $smtp_host              = $::os_service_default,
+  $workers                = $facts['os_workers'],
+  $host                   = $facts['os_service_default'],
+  $swift_default_quota_gb = $facts['os_service_default'],
+  $smtp_host              = $facts['os_service_default'],
 ) inherits manuka::params {
 
   include ::manuka::deps

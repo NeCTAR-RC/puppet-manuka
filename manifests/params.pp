@@ -9,7 +9,7 @@ class manuka::params {
   $client_package_name         = "python${pyvers}-manukaclient"
   $group                       = 'manuka'
 
-  case $::osfamily {
+  case $facts['os']['family'] {
     'Debian': {
       $common_package_name         = 'manuka-common'
       $api_package_name            = 'manuka-api'
@@ -18,7 +18,7 @@ class manuka::params {
       $manuka_wsgi_script_source  = '/usr/share/manuka/manuka.wsgi'
     }
     default: {
-      fail("Unsupported osfamily: ${::osfamily} operatingsystem")
+      fail("Unsupported osfamily: ${facts['os']['family']} operatingsystem")
     }
 
   } # Case $::osfamily

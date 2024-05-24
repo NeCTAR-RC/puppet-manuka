@@ -32,12 +32,12 @@ class manuka::api (
   $enabled                        = true,
   $manage_service                 = true,
   $service_name                   = $::manuka::params::api_service_name,
-  $host                           = $::os_service_default,
-  $port                           = $::os_service_default,
+  $host                           = $facts['os_service_default'],
+  $port                           = $facts['os_service_default'],
   $package_ensure                 = 'present',
-  $idp_domain_mapping_dir         = $::os_service_default,
+  $idp_domain_mapping_dir         = $facts['os_service_default'],
   $whitelist                      = [],
-  $fake_shib                      = $::os_service_default,
+  $fake_shib                      = $facts['os_service_default'],
 ) inherits manuka::params {
 
   include ::manuka::deps

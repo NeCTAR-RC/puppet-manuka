@@ -14,7 +14,7 @@
 #
 class manuka::db (
   $database_connection              = 'sqlite:////var/lib/manuka/manuka.sqlite',
-  $database_connection_recycle_time = $::os_service_default,
+  $database_connection_recycle_time = $facts['os_service_default'],
 ) {
 
   include ::manuka::deps

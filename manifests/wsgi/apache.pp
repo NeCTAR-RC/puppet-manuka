@@ -109,12 +109,12 @@
 #   class { 'manuka::wsgi::apache': }
 #
 class manuka::wsgi::apache (
-  $servername                  = $::fqdn,
+  $servername                  = $facts['networking']['fqdn'],
   $port                        = 80,
   $bind_host                   = undef,
   $path                        = '/',
   $ssl                         = false,
-  $workers                     = $::os_workers,
+  $workers                     = $facts['os_workers'],
   $aliases                     = undef,
   $ssl_cert                    = undef,
   $ssl_key                     = undef,
