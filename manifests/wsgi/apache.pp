@@ -134,6 +134,7 @@ class manuka::wsgi::apache (
   $error_log_pipe              = undef,
   $error_log_syslog            = undef,
   $custom_wsgi_process_options = {},
+  $wsgi_script_source          = $manuka::params::manuka_wsgi_script_source,
 ) {
 
   include ::manuka::deps
@@ -167,7 +168,7 @@ class manuka::wsgi::apache (
     wsgi_process_group          => 'manuka',
     wsgi_script_dir             => $::manuka::params::manuka_wsgi_script_path,
     wsgi_script_file            => 'app',
-    wsgi_script_source          => $::manuka::params::manuka_wsgi_script_source,
+    wsgi_script_source          => $wsgi_script_source,
     access_log_file             => $access_log_file,
     access_log_pipe             => $access_log_pipe,
     access_log_syslog           => $access_log_syslog,
