@@ -1,12 +1,11 @@
 # Parameters for puppet-manuka
 #
 class manuka::params {
-  include ::openstacklib::defaults
-  $pyvers = $::openstacklib::defaults::pyvers
+  include openstacklib::defaults
 
   $api_service_name            = 'manuka-api'
   $worker_service_name         = 'manuka-worker'
-  $client_package_name         = "python${pyvers}-manukaclient"
+  $client_package_name         = "python${$openstacklib::defaults::pyver3}-manukaclient"
   $group                       = 'manuka'
 
   case $facts['os']['family'] {

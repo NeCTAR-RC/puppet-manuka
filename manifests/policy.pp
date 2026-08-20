@@ -24,14 +24,13 @@
 #   Defaults to /etc/manuka/policy.json
 #
 class manuka::policy (
-  $policies    = {},
-  $policy_path = '/etc/manuka/policy.yaml',
+  Hash $policies    = {},
+  String $policy_path = '/etc/manuka/policy.yaml',
 ) {
 
   include manuka::deps
   include manuka::params
 
-  validate_legacy(Hash, 'validate_hash', $policies)
 
   Openstacklib::Policy::Base {
     file_path  => $policy_path,

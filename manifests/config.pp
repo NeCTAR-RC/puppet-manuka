@@ -21,12 +21,10 @@
 #   or Puppet catalog compilation will fail with duplicate resources.
 #
 class manuka::config (
-  $manuka_config = {},
+  Hash $manuka_config = {},
 ) {
 
   include ::manuka::deps
-
-  validate_legacy(Hash, 'validate_hash', $manuka_config)
 
   create_resources('manuka_config', $manuka_config)
 }

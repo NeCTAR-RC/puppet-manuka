@@ -17,10 +17,7 @@ class manuka::db (
   $database_connection_recycle_time = $facts['os_service_default'],
 ) {
 
-  include ::manuka::deps
-
-  validate_legacy(Oslo::Dbconn, 'validate_re', $database_connection,
-    ['^(sqlite|mysql(\+pymysql)?|postgresql):\/\/(\S+:\S+@\S+\/\S+)?'])
+  include manuka::deps
 
   oslo::db { 'manuka_config':
     connection              => $database_connection,
